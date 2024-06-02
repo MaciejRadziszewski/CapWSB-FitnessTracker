@@ -1,6 +1,7 @@
 package com.capgemini.wsb.fitnesstracker.user.internal;
 
 import com.capgemini.wsb.fitnesstracker.user.api.User;
+import com.capgemini.wsb.fitnesstracker.user.api.UserBasic;
 import com.capgemini.wsb.fitnesstracker.user.api.UserProvider;
 import com.capgemini.wsb.fitnesstracker.user.api.UserService;
 import lombok.RequiredArgsConstructor;
@@ -40,5 +41,13 @@ class UserServiceImpl implements UserService, UserProvider {
     public List<User> findAllUsers() {
         return userRepository.findAll();
     }
+
+    public Optional<List<UserBasic>> getBasicUsers() {return userRepository.getBasicUsers();}
+
+    public User updateUser (final User user) {return  userRepository.save(user);}
+
+    public void removeUser (final User user) {userRepository.delete(user);}
+
+    public Optional<List<User>> getUsersOlderThan(final int age) {return userRepository.getUsersOlderThan(age);}
 
 }

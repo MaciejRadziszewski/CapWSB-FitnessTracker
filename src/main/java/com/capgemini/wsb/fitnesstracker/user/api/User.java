@@ -33,6 +33,22 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public User(
             final String firstName,
             final String lastName,
