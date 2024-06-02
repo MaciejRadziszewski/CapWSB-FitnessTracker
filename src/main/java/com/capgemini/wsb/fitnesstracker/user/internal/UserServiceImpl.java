@@ -42,12 +42,16 @@ class UserServiceImpl implements UserService, UserProvider {
         return userRepository.findAll();
     }
 
+    @Override
     public Optional<List<UserBasic>> getBasicUsers() {return userRepository.getBasicUsers();}
 
+    @Override
     public User updateUser (final User user) {return  userRepository.save(user);}
 
+    @Override
     public void removeUser (final User user) {userRepository.delete(user);}
 
+    @Override
     public Optional<List<User>> getUsersOlderThan(final int age) {return userRepository.getUsersOlderThan(age);}
 
 }

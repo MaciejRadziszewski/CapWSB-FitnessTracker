@@ -13,5 +13,9 @@ public interface UserService {
 
     Optional<List<UserBasic>> getBasicUsers();
 
+    User updateUser (User user);
+
+    void removeUser (User user);
+
     Optional<List<User>> getUsersOlderThan(int age);
 }
