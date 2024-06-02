@@ -22,7 +22,7 @@ class TrainingServiceImpl implements TrainingProvider, TrainingService {
 
     @Override
     public Optional<Training> getTraining(final Long trainingId) {
-        throw new UnsupportedOperationException("Not finished yet");
+        return trainingRepository.findById(trainingId);
     }
 
     @Override
